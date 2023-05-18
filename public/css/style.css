@@ -1,0 +1,939 @@
+@font-face {
+    font-family: 'Jacques Francois';
+    src: url('../font/JacquesFrancois-Regular.ttf') format('truetype');
+
+}
+
+html, body {
+    height: 100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+i {
+    margin-right:10px;
+}
+
+section {
+    width:100%;
+}
+main {
+    width:100%;
+}
+.container {
+    width:100%;
+}
+
+
+.container1 {
+    display:flex;
+    height:100%;
+}
+
+.gauche {
+    width: 200px;
+    height:100%;
+    background-color: #00526C;
+    text-align: center;
+    position:fixed
+
+}
+
+.gauche img{
+    margin-top:30px;
+    height:150px;
+    width:auto;
+}
+
+.banner {
+    width: 100%;
+    height: 300px;
+    background-image: url("../images/banner.png");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.banner h1 {
+    margin-top:0;
+    text-align: center;
+    color:white;
+    font-family: "Jacques Francois";
+    font-size:50px;
+    margin-bottom:0;
+
+
+
+}
+
+.droite {
+    margin:0 auto;
+    width:100%;
+    height:100%;
+
+
+}
+
+
+.connexion {
+    width:fit-content;
+    height:500px;
+    display: flex;
+    justify-content: center;
+    gap:150px;
+    margin: 0 auto;
+
+}
+
+.connexion form {
+    font-family: 'Jacques Francois';
+    width: fit-content;
+    margin-top:100px;
+    padding:80px;
+    padding-top:40px;
+    border: solid 1px #00526C;
+    border-radius: 10px;
+    height:400px;
+}
+
+.connexion form h1 {
+    text-align: center;
+    color: #00526C;
+}
+
+.connexion h2 {
+    font-family: "Jacques Francois";
+    font-size:30px;
+    color: #00526C;
+    margin-top:100px;
+    width:250px;
+    height:60px;
+    border-bottom:1px solid #00526C;
+    margin-bottom:100px;
+}
+
+.connexion form input[type="checkbox"] {
+    width:30px;
+}
+
+.connexion form input[type="submit"] {
+
+    background-color: white;
+    border:1px solid #00526C;
+    color:#00526C;
+    padding:15px;
+    font-size:20px;
+    margin-bottom:20px;
+
+}
+.connexion form input[type="submit"]:hover {
+    color:white;
+    background-color: #00526C;
+}
+.connexion form input {
+    margin-top:40px;
+    width:100%;
+    padding:10px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    border: none;
+    font-family: "Jacques Francois";
+}
+
+
+
+
+
+
+.lottie-controls {
+    display:none;
+}
+
+
+
+.inscription {
+    width:fit-content;
+    margin:0 auto;
+    height:600px;
+    display: flex;
+    justify-content: center;
+    gap:150px;
+
+}
+
+.inscription form {
+    font-family: 'Jacques Francois';
+    width: fit-content;
+    margin-top: 40px;
+    padding:80px;
+    padding-top:10px;
+    padding-bottom:20px;
+    border: solid 1px #00526C;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.inscription form h1 {
+    text-align: center;
+    color: #00526C;
+}
+
+.inscription h2 {
+    font-family: "Jacques Francois";
+    font-size:30px;
+    color: #00526C;
+    margin-top:40px;
+    width : 350px;
+    height:60px;
+    border-bottom:1px solid #00526C;
+    margin-bottom:100px;
+}
+
+.inscription form input[type="checkbox"] {
+    width:30px;
+}
+
+.inscription form input[type="submit"] {
+
+    background-color: white;
+    border:1px solid #00526C;
+    color:#00526C;
+    padding:15px;
+    font-size:20px;
+    margin-bottom:20px;
+
+}
+.inscription form input[type="submit"]:hover {
+    color:white;
+    background-color: #00526C;
+}
+.inscription form input {
+    margin-top:40px;
+    width:100%;
+    padding:10px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    border: none;
+    font-family: "Jacques Francois";
+}
+
+nav img {
+    margin-bottom:50px;
+}
+
+nav {
+    width: 200px; /* Largeur du menu */
+    height: 100vh; /* Hauteur du menu - prend toute la hauteur de la fenêtre */
+    background-color: #00526C; /* Couleur de fond du menu */
+    padding: 20px; /* Espacement interne du menu */
+    box-sizing: border-box; /* Inclure les bordures et les marges dans la taille totale */
+    position:fixed;
+}
+
+nav a {
+    display: block; /* Afficher les liens en tant que blocs pour les rendre verticaux */
+    margin-bottom: 10px; /* Espacement vertical entre les liens */
+    color: #333; /* Couleur du texte des liens */
+    text-decoration: none; /* Supprimer la soulignement des liens */
+    line-height: 60px;
+    text-align: center;
+    color:white;
+    font-family: "Jacques Francois";
+    border:none;
+    transition: border-color 1s;
+    font-size:18px;
+    border-top: 1px solid transparent; /* Bordure initiale transparente */
+    border-bottom: 1px solid transparent; /
+
+}
+
+nav a:hover {
+
+    border-color:white;
+
+
+}
+
+nav p {
+    text-align: center;
+    color:white;
+    margin-bottom:-10px;
+}
+
+section {
+    display: flex;
+}
+
+main {
+    margin-left:300px;
+}
+
+.fil {
+
+    color:#00526C;
+    font-family: "Jacques Francois";
+    border-bottom: 2px solid #00526C;
+    padding-bottom:15px;
+    width:500px;
+    margin-bottom:60px;
+    margin-top:40px;
+
+}
+
+.file {
+
+    color:#00526C;
+    font-family: "Jacques Francois";
+    border-bottom: 2px solid #00526C;
+    padding-bottom:15px;
+    width:fit-content;
+    margin-bottom:60px;
+    margin-top:40px;
+}
+
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-button {
+    left: 320px;
+}
+
+.next-button {
+    right: 20px;
+}
+
+.basket {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.post {
+    width:fit-content;
+    margin:0 auto;
+}
+
+
+.carousel-inner {
+    margin:0 auto;
+}
+.carousel {
+    width:600px;
+
+}
+.carousel-item {
+    background-color: white;
+    border:1px solid #00526C;
+    padding:20px;
+    border-radius: 10px;
+    padding-right:60px;
+    padding-left:60px;
+}
+
+
+.lesprofiles {
+    display:flex;
+
+    gap:250px;
+    width:1500px;
+    overflow:scroll;
+
+
+}
+.unprofil {
+    display:block;
+    border:1px solid #00526C;
+    padding:30px;
+    border-radius:10px;
+    text-align: center;
+
+}
+.unprofil img {
+    height:150px;
+    width: auto;
+}
+
+.createapost {
+    width:fit-content;
+    padding:70px;
+    margin:0 auto;
+    border:1px solid #00526C;
+    border-radius: 10px;
+    font-family: "Jacques Francois";;
+
+
+}
+
+.createapost h2 {
+    color:#00526C;
+}
+
+.createapost input {
+    line-height: 5px;
+    width:400px;
+}
+
+.createapost textarea {
+    width:400px;
+    height:200px;
+}
+
+.createapost  input[type="submit"] {
+    width:200px;
+    padding:20px;
+    border: 1px solid #00526C;
+    border-radius: 20px;
+    margin-top:30px;
+    background-color: white;
+    color: #00526C;
+    font-size:20px;
+}
+
+.flex-container {
+    display: flex;
+    gap:80px;
+    flex-wrap: wrap;
+    /* Définir d'autres styles de votre conteneur flex */
+}
+.circle-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.containerprofil {
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    gap:50px;
+    margin-top:30px;
+    font-family: "Jacques Francois";
+    padding-bottom: 30px;
+
+}
+
+.infosprofil
+{
+    border-bottom: 2px solid #00526C;
+}
+
+.following {
+    width:fit-content;
+    margin:0 auto;
+    padding:10px;
+    background-color: #00526C;
+    border-radius: 10px;
+    margin-bottom:5px;
+
+}
+
+.following a {
+    text-decoration: none;
+    color:white;
+    font-size:20px;
+    font-family: "Jacques Francois";
+
+}
+
+.nom {
+    width:200px;
+}
+
+.trait {
+    width: 100%;
+    height: 2px;
+    background-color: #E51482;
+    margin-bottom:10px;
+}
+
+.containerprofil button {
+    font-family: "Jacques Francois";
+    padding:10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #00526C;
+
+}
+
+.abonnements {
+    text-align: center;
+}
+#formulaire-container {
+    text-align: left;
+}
+
+#formulaire-container h1 {
+    color:#00526C;
+}
+#formulaire-container  input[type="submit"] {
+    width:100px;
+    padding:10px;
+    border: 1px solid #00526C;
+    border-radius: 20px;
+    margin-top:30px;
+    background-color: white;
+    color: #00526C;
+    font-size:15px;
+}
+#formulaire-container input {
+    line-height: 5px;
+    font-family: "Jacques Francois";
+}
+
+.postprofil {
+    display: flex;
+    border:1px solid #00526C;
+    width:fit-content;
+    margin:0 auto;
+    padding:30px;
+    border-radius:10px;
+}
+.imagepost {
+    width: fit-content;
+}
+
+.imagepost img {
+    width: 600px;
+}
+
+.infopost {
+    width:300px;
+    padding-left:20px;
+}
+
+.h3profil {
+    text-align: center;
+    color:#00526C;
+    font-family: "Jacques Francois";
+    font-size:30px;
+}
+.infopost h3 {
+    color:#00526C;
+    font-family: "Jacques Francois";
+    font-size:25px;
+    margin-top:0px;
+}
+
+.infopost p {
+
+    font-family: "Jacques Francois";
+    font-size:15px;
+}
+.commentaires {
+
+height: 200px;
+    overflow: auto;
+    overflow: scroll;
+}
+
+.commentaires2 {
+
+    height: 200px;
+    width:500px;
+    margin: 0 auto;
+    overflow: auto;
+    overflow: scroll;
+}
+
+
+.infopost form textarea{
+    width:295px;
+    height:30px;
+    border-color:#00526C;
+    border-radius: 10px;
+}
+.infopost form button{
+    width:200px;
+    padding:10px;
+    border: 1px solid #00526C;
+    border-radius: 20px;
+    margin-top:1px;
+    background-color: white;
+    color: #00526C;
+    font-size:15px;
+    transition:0.5s;
+
+}
+
+.infopost form button:hover{
+    width:200px;
+    padding:10px;
+    border: 1px solid #E51482;
+    border-radius: 20px;
+    margin-top:1px;
+    background-color: #E51482;
+    color: white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+
+.comment {
+    border:0.5px solid #00526C;
+    border-radius: 10px;
+    margin-bottom:5px;
+    padding:10px;
+}
+
+.comment strong {
+    color:#00526C;
+}
+
+.postcontent {
+    border-top:0.5px solid #E51482;
+    border-bottom:0.5px solid #E51482;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.imagepost a {
+    margin-top:2px;
+    color:#E51482;
+}
+.post2 {
+    margin-top:50px;
+    font-family: "Jacques Francois";
+    border:1px solid #00526C;
+    padding:20px;
+    border-radius:10px;
+    width:fit-content;
+    margin:0 auto;
+}
+
+.post2 h1 {
+    color:#00526C;
+    font-family: "Jacques Francois";
+}
+.post2 h2 {
+    color:#E51482;
+    font-family: "Jacques Francois";
+}
+
+.post2 img {
+    height:500px;
+
+}
+
+.formcommentaire {
+    text-align: center;
+    margin-top:10px;
+}
+
+.formcommentaire textarea {
+    width:fit-content;
+    border-color:#00526C;
+    border-radius:10px;
+    margin:0 auto;
+
+}
+
+.posth3 {
+    text-align: center;
+    color:#00526C;
+    font-family: "Jacques Francois";
+}
+
+.formcommentaire  button{
+    width:200px;
+    padding:10px;
+    border: 1px solid #00526C;
+    border-radius: 20px;
+    margin-top:1px;
+    background-color: white;
+    color: #00526C;
+    font-size:15px;
+    margin-bottom: 10px;
+
+}
+
+.nom p {
+    margin:0;
+}
+
+.scrollsport {
+    display:flex;
+    justify-content: left;
+    gap:80px;
+    overflow:scroll;
+    width:1700px;
+
+}
+
+.post {
+    background-color: white;
+    border:1px solid #00526C;
+    padding:20px;
+    border-radius: 10px;
+    padding-right:60px;
+    padding-left:60px;
+    font-family: "Jacques Francois";
+}
+
+.post h2 {
+    color:#E51482;
+    font-family: "Jacques Francois";
+}
+
+.logostyle {
+height:150px; width:auto;
+}
+
+.phone {
+    display:none;
+}
+
+.postimg {
+    height:300px; width:auto
+}
+
+.postprofil {
+
+    margin-bottom:100px;
+}
+
+.show-comments-btn {
+    font-family: "Jacques Francois";
+    background-color: white;
+    color:#00526C;
+    padding:5px;
+    padding-left:15px;
+    padding-right:15px;
+    border:1px solid #00526C;
+    border-radius: 10px;
+
+}
+
+
+.show-comments-btn2 {
+    font-family: "Jacques Francois";
+    background-color: white;
+    color:#00526C;
+    padding:5px;
+    padding-left:15px;
+    padding-right:15px;
+    border:1px solid #00526C;
+    border-radius: 10px;
+
+}
+.imagepost a {
+    padding-bottom:5px;
+}
+@media screen and (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container1 {
+        display: block;
+    }
+
+    .gauche {
+        width: 100%;
+        height: 100px;
+    }
+
+    .gauche img {
+        margin-top: 0px;
+        height: 93px;
+        width: auto;
+    }
+
+    .connexion {
+        display: block;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .lottie {
+        display: none;
+    }
+
+    .connexion form {
+        padding: 60px;
+        margin-top: 10px;
+    }
+
+    section {
+        display: block;
+
+    }
+
+    nav {
+        position: static;
+        width: 100%;
+    }
+
+    main {
+        margin-left: 0px;
+    }
+
+    .lesprofiles {
+        overflow: scroll;
+        width: 100%;
+    }
+
+    .scrollsport {
+        width: 100%;
+    }
+
+    .fil {
+        width: fit-content;
+        margin-left:4px;
+    }
+    .file {
+        margin-left:4px;
+    }
+
+    nav {
+        height: 100px;
+    }
+
+    .logostyle {
+        height: 65px;
+        width: auto;
+
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    nav a {
+        width: 20px;
+        display: none;
+    }
+
+    .pdisplay {
+        display: none;
+    }
+
+    .phone {
+        display: flex;
+        background-color: #00526C;
+        width: 100%;
+        height: 60px;
+        justify-content: center;
+        gap: 50px;
+        align-items: center;
+        position: fixed;
+        bottom:0;
+
+
+    }
+
+    .phone a {
+        display: flex;
+
+    }
+
+    .unprofil {
+        margin-bottom:85px;
+    }
+
+    .post {
+        padding-right: 30px;
+        padding-left: 30px;
+        margin-left:4px;
+    }
+
+    .post img {
+        height:222px;
+    }
+    .post2 {
+        margin-top:10px;
+    }
+    .post2 img {
+       height: 222px;
+    }
+
+    .formcommentaire {
+        padding-bottom:80px;
+    }
+
+    .commentaires2 {
+        width:100%;
+    }
+
+    .flex-container{
+        flex-wrap: unset;
+    }
+
+    .createapost  {
+        width:95%;
+        padding:2px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    .createapost textarea {
+        width:90%;
+
+    }
+    .createpost input {
+        width:90%;
+        margin:0 auto;
+    }
+
+    .circle-image {
+        height:80px;
+        width:80px;
+
+    }
+
+    .containerprofil {
+        gap:20px;
+    }
+
+    .abonnements {
+        display: block;
+    }
+
+    .containerprofil form {
+        display:none;
+    }
+
+    .postprofil {
+        display:block;
+        margin-bottom:100px;
+    }
+    .imagepost img {
+        height:222px;
+        width: auto;
+    }
+
+    .blankspace {
+        height:100px;
+        width:100%;
+    }
+}
+
+
+
+
