@@ -4,6 +4,12 @@
 
 }
 
+@font-face {
+    font-family: 'RaceSport';
+    src: url('../font/RaceSport.ttf') format('truetype');
+
+}
+
 html, body {
     height: 100%;
     width:100%;
@@ -242,10 +248,10 @@ nav a {
     line-height: 60px;
     text-align: center;
     color:white;
-    font-family: "Jacques Francois";
+    font-family: "RaceSport";
     border:none;
     transition: border-color 1s;
-    font-size:18px;
+    font-size:12px;
     border-top: 1px solid transparent; /* Bordure initiale transparente */
     border-bottom: 1px solid transparent; /
 
@@ -275,7 +281,7 @@ main {
 .fil {
 
     color:#00526C;
-    font-family: "Jacques Francois";
+    font-family: "RaceSport";
     border-bottom: 2px solid #00526C;
     padding-bottom:15px;
     width:500px;
@@ -287,9 +293,10 @@ main {
 .file {
 
     color:#00526C;
-    font-family: "Jacques Francois";
+    font-family: "RaceSport";
     border-bottom: 2px solid #00526C;
     padding-bottom:15px;
+    font-size:15px;
     width:fit-content;
     margin-bottom:60px;
     margin-top:40px;
@@ -526,8 +533,8 @@ main {
 .h3profil {
     text-align: center;
     color:#00526C;
-    font-family: "Jacques Francois";
-    font-size:30px;
+    font-family: "RaceSport";
+    font-size:25px;
 }
 .infopost h3 {
     color:#00526C;
@@ -741,10 +748,176 @@ height:150px; width:auto;
 .imagepost a {
     padding-bottom:5px;
 }
+
+
+.supp {
+border:none !important;
+    font-size:2px;
+    width:fit-content !important;
+}
+
+.supp:hover {
+    background-color:white !important;
+    color:#00526C !important;
+    font-weight:normal !important;
+}
+
+
+.createamatch {
+    width:fit-content;
+    padding:70px;
+    margin:0 auto;
+    border:1px solid #00526C;
+    border-radius: 10px;
+    font-family: "Jacques Francois";;
+
+
+}
+
+.createamatch h2 {
+    color:#00526C;
+}
+
+.createamatch input {
+    line-height: 5px;
+    width:400px;
+}
+
+.createamatch textarea {
+    width:400px;
+    height:200px;
+}
+
+.matchbtn {
+    width:150px;
+    padding:10px;
+    border: 1px solid #00526C;
+    border-radius: 20px;
+    margin-top:30px;
+    background-color: white;
+    color: #00526C;
+    font-size:px;
+}
+
+
+.submenu {
+    position: relative;
+}
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    border:1px solid white;
+    top: 100%;
+    left: 0;
+    background-color: #00526C;
+    color: white;
+    padding: 10px;
+    z-index: 1;
+}
+
+.submenu:hover .submenu-content {
+    display: block;
+}
+
+.match {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style: none;
+    font-family: "Jacques Francois";
+    text-align:center;
+    width:600px;
+    margin:0 auto;
+}
+
+.match .title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.match .details {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.match .score {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+h1.titreerror {
+    font-family: "Jacques Francois";
+    color: #E51482;
+    text-align: center;
+    font-size:60px;
+}
+
+.containererror {
+    display:flex; align-items: center; justify-content: center;
+    gap:50px;
+}
+
+.lottieerror {
+width: 600px; height: 600px;
+}
+
+.error {
+    text-align: center;
+}
+
+.button-style {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00526C;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family:"Jacques Francois";
+}
+
+.button-style:hover {
+    background-color: #E51482;
+    color: white;
+}
+
+.scrollsport::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.lesprofiles::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+
+
 @media screen and (max-width: 600px) {
     body {
         overflow-x: hidden;
     }
+
+    .containererror {
+        display:block;
+        justify-content: center;
+        width:100%;
+    }
+
+    .lottieerror {
+        width: 400px; height: 400px;
+    }
+
+.error {
+    margin: 0 auto;
+}
 
     .container1 {
         display: block;
@@ -790,7 +963,10 @@ height:150px; width:auto;
 
     main {
         margin-left: 0px;
+
     }
+
+
 
     .lesprofiles {
         overflow: scroll;
@@ -828,6 +1004,7 @@ height:150px; width:auto;
     nav a {
         width: 20px;
         display: none;
+
     }
 
     .pdisplay {
@@ -896,10 +1073,7 @@ height:150px; width:auto;
         width:90%;
 
     }
-    .createpost input {
-        width:90%;
-        margin:0 auto;
-    }
+
 
     .circle-image {
         height:80px;
@@ -932,7 +1106,23 @@ height:150px; width:auto;
         height:100px;
         width:100%;
     }
-}
+
+    .createapost input {
+        width:300px;
+        margin:0 auto;
+    }
+
+    .match {
+        width:250px;
+    }
+
+    .postprofil {
+        padding:20px;
+    }
+
+
+
+ }
 
 
 

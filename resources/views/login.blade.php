@@ -2,9 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> My first laravel </title>
+    <title> Athleteam </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" >
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </head>

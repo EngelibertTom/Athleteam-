@@ -25,6 +25,7 @@
 
     </form>
     @endauth
+    <div class="blankspace"></div>
 
 
     @endsection

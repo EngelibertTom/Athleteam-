@@ -21,4 +21,6 @@ class Profile extends Model
 
         return $this->role === $role;
     }
+
+
 }

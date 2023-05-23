@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Club;
 use App\Models\Comment;
+use App\Models\Match;
 use App\Models\Post;
 use App\Models\Profile;
+use App\Models\Sport;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -50,12 +53,18 @@ class MyController extends Controller
             ->where('Sport', 'Football')
             ->get();
 
+        $tenis = DB::table('post')
+            ->whereIn('user_id', $subscriptions)
+            ->where('Sport', 'Tennis')
+            ->get();
+
 
         return view('home' ,
             ['names'=>$names,
               'profiles'=>$profiles,
               'post' => $posts,
-                'foot'=> $foot]);
+                'foot'=> $foot,
+                'tenis'=>$tenis]);
 
 
     }
@@ -80,8 +89,7 @@ class MyController extends Controller
     public function update(Request $request ){
 
         $request->validate([
-            'city' =>'required|min:3|max:25',
-            'num'=> 'required|min:3|max:25',
+
             'image' => 'required|file|mimes:jpg,bmp,png,gif'
         ]);
 
@@ -92,8 +100,6 @@ class MyController extends Controller
         $p = Profile::where('user_id', $id)->first() ;
         if($p) {
             $p->url =  $request->file("image")->move('uploads/'.Auth::id() , $fileName);
-            $p->city = $request->input('city');
-            $p->mobile = $request->input('num');
             $p->description = $request->input('description');
             $p->user_id = Auth::id();
             $p->save();
@@ -189,6 +195,115 @@ class MyController extends Controller
     public function updateForm()
     {
         return view('update-form');
+    }
+
+    public function delete($id)
+    {
+        $post = Post::findOrFail($id);
+
+        if (Auth::id() !== $post->user_id) {
+            // L'utilisateur n'est pas autorisé à supprimer ce post
+            abort(404, 'Accès refusé');
+        }
+        $post->delete();
+
+        return redirect()->back();
+    }
+
+
+    public function upcomingMatches()
+    {
+        $upcomingMatches = Match::where('date', '>', now())->orderBy('date')->get();
+        return view('upcoming', ['matches' => $upcomingMatches]);
+    }
+
+    public function pastMatches()
+    {
+        $pastMatches = Match::where('date', '<', now())->orderByDesc('date')->get();
+        return view('past', ['matches' => $pastMatches]);
+    }
+
+    public function addScore(Request $request)
+    {
+        // Validation des données du formulaire d'ajout de scores
+        $validatedData = $request->validate([
+            'match_id' => 'required|exists:matches,id',
+            'score' => 'required|numeric',
+        ]);
+
+        // Vérification de l'authentification de l'utilisateur administrateur
+        if ($request->user()->isAdmin()) {
+            $match = Match::findOrFail($validatedData['match_id']);
+            $match->score = $validatedData['score'];
+            $match->save();
+            return redirect()->back()->with('success', 'Score ajouté avec succès.');
+        }
+
+        return redirect()->back()->with('error', 'Vous devez être administrateur pour ajouter un score.');
+    }
+
+    public function creatematch()
+    {
+        $role = Auth::user()->profile->role;
+        if ($role !== 'admin' && $role !== 'coach') {
+            abort(404, 'Accès refusé');
+        }
+
+        $clubs = Club::all();
+        $sports = Sport::all();
+
+        return view('gestion_match', compact('clubs', 'sports'));
+    }
+
+
+    public function storeclub(Request $request)
+    {
+        $request->validate([
+            'club_name' => 'required|string|max:255',
+        ]);
+
+        $club = new Club();
+        $club->name = $request->input('club_name');
+        $club->save();
+
+        return redirect()->back()->with('success', 'Le club a été ajouté avec succès.');
+    }
+
+    public function storematch(Request $request)
+    {
+        $request->validate([
+            'sport_id' => 'required|exists:sports,id',
+            'home_club_id' => 'required|exists:clubs,id',
+            'away_club_id' => 'required|exists:clubs,id',
+            'date' => 'required|date',
+            'heure' => 'required|string|max:255',
+            'score' => 'required|string|max:255',
+        ]);
+
+        $match = new Match();
+        $match->sport_id = $request->input('sport_id');
+        $match->home_club_id = $request->input('home_club_id');
+        $match->away_club_id = $request->input('away_club_id');
+        $match->date = $request->input('date');
+        $match->heure = $request->input('heure');
+        $match->score = $request->input('score');
+        $match->save();
+
+        return redirect()->back()->with('success', 'Le match a été ajouté avec succès.');
+    }
+
+
+    public function storeSport(Request $request)
+    {
+        $request->validate([
+            'sport_name' => 'required|string|max:255',
+        ]);
+
+        $sport = new Sport();
+        $sport->name = $request->input('sport_name');
+        $sport->save();
+
+        return redirect()->back()->with('success', 'Le sport a été ajouté avec succès.');
     }
 
 }

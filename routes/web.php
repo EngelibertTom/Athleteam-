@@ -34,6 +34,9 @@ Route::get('/createpost', function () {
     return view('createpost');
 });
 
+Route::delete('/post/delete/{id}', [MyController::class, 'delete'])->middleware("auth");;
+
+
 Route::post('/create/post', [MyController::class, 'createpost'])->middleware("auth");
 
 Route::get("/follow/{id}", [MyController::class, 'follow'])->where('id', '[0-9]+')->middleware("auth");
@@ -45,6 +48,22 @@ Route::post('/setcoach/{id}', [MyController::class, 'becoach'])->where('id', '[0
 Route::post('/unsetcoach/{id}', [MyController::class, 'notbecoach'])->where('id', '[0-9]+')->middleware("auth");
 
 Route::post('/profil/updateButton', [MyController::class, 'updateForm']);
+
+Route::get('/matches/upcoming', [MyController::class, 'upcomingMatches']);
+Route::get('/matches/past', [MyController::class, 'pastMatches']);
+Route::middleware('admin')->post('/matches/score', [MyController::class, 'addScore'])->name('matches.score');
+
+
+
+
+
+Route::get('/admin/create', [MyController::class, 'creatematch']);
+Route::post('/admin/clubs', [MyController::class, 'storeclub']);
+Route::post('/admin/match', [MyController::class, 'storematch']);
+Route::post('/admin/sports', [MyController::class, 'storeSport']);
+
+
+
 
 
 

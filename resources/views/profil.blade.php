@@ -67,7 +67,14 @@
                     <a href="post/{{$post->id}}"> Voir le post </a>
                 </div>
                 <div class="infopost">
+                    <div style="display:flex">
                     <h3>{{ $post->title}}</h3>
+                        <form method="POST" action="/post/delete/{{$post->id}}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="supp" type="submit">Supprimer</button>
+                        </form>
+                    </div>
                     <p class="postcontent">{{ $post->content }}</p>
                     <p>{{$post->author}}</p>
                     <h3>Commentaires</h3>

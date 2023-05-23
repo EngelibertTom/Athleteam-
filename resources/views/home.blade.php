@@ -46,18 +46,40 @@
     </div>
 
 
+    <h2 class="file"> Tennis  </h2>
+
+    <div class="scrollsport" >
+        @foreach($tenis as $key => $tennis)
+
+            <div class="post">
+                <h2>{{ $tennis->title }}</h2>
+                <img src="{{ $tennis->image }}" class="postimg">
+                <p>{{ $tennis->content }}</p>
+                <p>{{ $tennis->author }}</p>
+                <a href="post/{{$tennis->id}}"> Voir le post </a>
+            </div>
+
+        @endforeach
+    </div>
+
+
 
 
 
     <h2 class="fil"> Découvrez les profils... </h2>
     <div class="lesprofiles">
-        @foreach($profiles->random(5) as $profile)
-            <div class="unprofil">
-                <img src="{{$profile->url}}"><br>
-                <a href="/profil/{{$profile->user->id}}"> {{$profile->user->name}} </a>
-
-            </div>
-        @endforeach
+        @if($profiles->count() > 0)
+            @foreach($profiles->random(min(5, $profiles->count())) as $profile)
+                <div class="unprofil">
+                    <div class="pdp">
+                        <div class="circle-image" style="background-image: url('{{ str_replace('\\', '/', $profile->url) }}');"></div>
+                    </div>
+                    <a href="/profil/{{$profile->user->id}}">{{$profile->user->name}}</a>
+                </div>
+            @endforeach
+        @else
+            <p>Aucun profil disponible.</p>
+        @endif
     </div>
 
 

@@ -49,6 +49,7 @@ class User extends Authenticatable
         self::created(function ($model) {
             $profile = new Profile();
             $profile->user_id = User::find(Auth::id());
+            $profile->url = 'images/avatar.png';
             $model->profile()->save($profile);
         });
     }
